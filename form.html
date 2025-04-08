@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICF Registration Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Your Tailwind form goes here -->
+  <form action="/submit-registration" method="POST" class="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-md space-y-6">
+    <h2 class="text-3xl font-bold text-center text-blue-700">ICF Student Registration Form</h2>
+  
+    <!-- Personal Information -->
+    <fieldset class="space-y-4">
+      <legend class="text-lg font-bold text-gray-800 ">Personal Information</legend>
+      <input type="text" name="full_name" placeholder="Full Name" required class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="date" name="dob" required class="w-full p-2 border border-gray-300 rounded-md" />
+      
+      <select name="gender" required class="w-full p-2 border border-gray-300 rounded-md">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+  
+      <input type="text" name="national_id" placeholder="National ID Number" class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="email" name="email" placeholder="Email Address (optional)" class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="text" name="location" placeholder="Sector / Cell / Village" class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="text" name="district" placeholder="District" class="w-full p-2 border border-gray-300 rounded-md" />
+    </fieldset>
+  
+    <!-- Educational Information -->
+    <fieldset class="space-y-4">
+      <legend class="text-xl font-semibold text-gray-700">Educational Information</legend>
+      <input type="text" name="school_name" placeholder="School Name" required class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="text" name="level" placeholder="Current Level (e.g. P5, S3)" required class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="text" name="student_id" placeholder="Student ID (optional)" class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="text" name="school_address" placeholder="School Address" class="w-full p-2 border border-gray-300 rounded-md" />
+    </fieldset>
+  
+    
+    <fieldset class="space-y-4">
+      <legend class="text-xl font-semibold text-gray-700">Support Needed</legend>
+      <div class="space-y-2">
+        <label class="block"><input type="checkbox" name="support[]" value="Tuition" class="mr-2"> Tuition Fees</label>
+        <label class="block"><input type="checkbox" name="support[]" value="Materials" class="mr-2"> School Materials</label>
+        <label class="block"><input type="checkbox" name="support[]" value="Meals" class="mr-2"> Meals</label>
+        <label class="block"><input type="checkbox" name="support[]" value="Transport" class="mr-2"> Transportation</label>
+        <label class="block">
+          <input type="checkbox" name="support[]" value="Other" class="mr-2"> Other:
+          <input type="text" name="support_other" placeholder="Specify" class="ml-2 p-1 border border-gray-300 rounded-md inline-block" />
+        </label>
+      </div>
+      <textarea name="reason" rows="3" placeholder="Why do you need support?" required class="w-full p-2 border border-gray-300 rounded-md"></textarea>
+    </fieldset>
+  
+    <!-- Guardian Info -->
+    <fieldset class="space-y-4">
+      <legend class="text-xl font-semibold text-gray-700">Guardian/Parent Information</legend>
+      <input type="text" name="guardian_name" placeholder="Guardian/Parent Name" required class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="text" name="relationship" placeholder="Relationship to Student" required class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="tel" name="guardian_phone" placeholder="Guardian Phone Number" required class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="text" name="occupation" placeholder="Guardian Occupation" class="w-full p-2 border border-gray-300 rounded-md" />
+    </fieldset>
+  
+    <!-- Declaration -->
+    <div class="flex items-start space-x-2">
+      <input type="checkbox" name="declaration" required class="mt-1" />
+      <label class="text-sm">I confirm the information provided is true and accurate to the best of my knowledge.</label>
+    </div>
+  
+    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 w-full font-semibold">Submit Registration</button>
+  </form>
+  
+</body>
+</html>
